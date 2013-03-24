@@ -3,9 +3,9 @@
 
 AUTHOR = u'Greg Back'
 SITENAME = u'Greg Back'
-SITEURL = ''
+SITEURL = 'http://gregback.net'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'America/Indiana/Indianapolis'
 
 DEFAULT_LANG = u'en'
 
