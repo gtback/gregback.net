@@ -1,0 +1,5 @@
+*.pyc
+output
+
+# Don't include private settings
+Makefile
