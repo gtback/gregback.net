@@ -11,8 +11,9 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=tefnut
-SSH_TARGET_DIR=/var/www/gregback.net
+SSH_HOST=isis
+SSH_PORT=22
+SSH_TARGET_DIR=/home/greg/www/gregback.net/output
 
 DROPBOX_DIR=~/Dropbox/Public/
 
