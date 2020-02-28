@@ -3,7 +3,8 @@
 
 AUTHOR = u'Greg Back'
 SITENAME = u'Greg Back'
-SITEURL = 'http://gregback.net'
+# SITEURL = 'http://gregback.net'
+SITEURL = 'https://happy-newton-f3131d.netlify.com/'
 
 TIMEZONE = 'America/Indiana/Indianapolis'
 
