@@ -4,7 +4,7 @@ My blog/website at http://gregback.net
 
 ## Hosting
 
-This site is hosted on [Netlify](https://app.netlify.com/sites/happy-newton-f3131d/overview). Any time a change is pushed to the master branch, the site will get rebuilt and published.
+This site is hosted on [Netlify](https://app.netlify.com/sites/happy-newton-f3131d/overview). Any time a change is pushed to the `main` branch, the site will get rebuilt and published.
 
 ## Local Testing
 
