@@ -9,3 +9,5 @@ This site is hosted on [Netlify](https://app.netlify.com/sites/happy-newton-f313
 ## Local Testing
 
 Run `make html` to build the site locally, or `make serve` to launch a [local server](http://localhost:8000).
+
+Run `make devserver` to run a server and automatically rebuild any files that are modified.
