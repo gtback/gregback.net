@@ -11,10 +11,6 @@ FTP_HOST=localhost
 FTP_USER=anonymous
 FTP_TARGET_DIR=/
 
-SSH_HOST=isis
-SSH_PORT=22
-SSH_TARGET_DIR=/home/greg/www/gregback.net/output
-
 DROPBOX_DIR=~/Dropbox/Public/
 
 help:
@@ -27,11 +23,6 @@ help:
 	@echo '   make publish                     generate using production settings '
 	@echo '   make serve                       serve site at http://localhost:8000'
 	@echo '   make devserver                   start/restart develop_server.sh    '
-	@echo '   ssh_upload                       upload the web site via SSH        '
-	@echo '   rsync_upload                     upload the web site via rsync+ssh  '
-	@echo '   dropbox_upload                   upload the web site via Dropbox    '
-	@echo '   ftp_upload                       upload the web site via FTP        '
-	@echo '   github                           upload the web site via gh-pages   '
 	@echo '                                                                       '
 
 
@@ -56,20 +47,4 @@ devserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
-ssh_upload: publish
-	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
-
-rsync_upload: publish
-	rsync -e "ssh" -P -rvz --delete $(OUTPUTDIR) $(SSH_HOST):$(SSH_TARGET_DIR)
-
-dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
-
-ftp_upload: publish
-	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
-
-github: publish
-	ghp-import $(OUTPUTDIR)
-	git push origin gh-pages
-
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github
+.PHONY: html help clean regenerate serve devserver publish
