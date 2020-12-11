@@ -1,6 +1,6 @@
 # gregback.net
 
-My blog/website at http://gregback.net
+My blog/website at [https://gregback.net](https://gregback.net).
 
 ## Hosting
 
