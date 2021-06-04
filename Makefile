@@ -33,12 +33,14 @@ $(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
+	mkdir -p $(OUTPUTDIR)
 	find $(OUTPUTDIR) -mindepth 1 -delete
 
 regenerate: clean
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 serve:
+	mkdir -p $(OUTPUTDIR)
 	cd $(OUTPUTDIR) && python -m http.server
 
 devserver:
