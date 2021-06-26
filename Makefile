@@ -41,7 +41,7 @@ regenerate: clean
 
 serve:
 	mkdir -p $(OUTPUTDIR)
-	cd $(OUTPUTDIR) && python -m http.server
+	cd $(OUTPUTDIR) && python -m http.server -b 0.0.0.0
 
 devserver:
 	$(BASEDIR)/develop_server.sh restart
